@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Accessibility</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <img
+        id="logo"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+        alt="freeCodeCamp logo"
+      />
+      <h1>HTML/CSS Quiz</h1>
+      <nav>
+        <ul>
+          <li><a accesskey="i" href="#student-info">INFO</a></li>
+          <li><a accesskey="h" href="#html-quiz">HTML</a></li>
+          <li><a accesskey="c" href="#css-quiz">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form action="" method="post">
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+          <div class="info">
+            <label for="student-name">Name:</label>
+            <input type="text" id="student-name" name="info" />
+          </div>
+          <div class="info">
+            <label for="student-email">Email:</label>
+            <input type="email" id="student-email" name="info" />
+          </div>
+          <div class="info">
+            <label for="birth-date"
+              >D.O.B.<span class="sr-only">(Date of Birth)</span>
+            </label>
+            <input type="date" id="birth-date" name="birth-date" />
+          </div>
+        </section>
+        <section role="region" aria-labelledby="html-quiz">
+          <div class="question-block">
+            <h2 id="html-quiz">HTML</h2>
+            <fieldset class="question" name="html-question-one">
+              <p>1</p>
+              <legend>
+                The legend element represents a caption for the content of its
+                parent fieldset element
+              </legend>
+              <ul class="answer-list">
+                <li>
+                  <label for="q1-a1"
+                    ><input type="radio" name="q1" id="q1-a1" />True</label
+                  >
+                </li>
+                <li>
+                  <label for="q1-a2"
+                    ><input type="radio" name="q1" id="q1-a2" />False</label
+                  >
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <div class="question-block">
+            <fieldset class="question" name="html-question-two">
+              <p>2</p>
+              <legend>
+                A label element nesting an input element is required to have a
+                for attribute with the same value as the input's id
+              </legend>
+              <div class="question">
+                <ul class="answer-list">
+                  <li>
+                    <label for="q2-a1"
+                      ><input type="radio" name="q2" id="q2-a1" />True</label
+                    >
+                  </li>
+                  <li>
+                    <label for="q2-a2"
+                      ><input type="radio" name="q2" id="q2-a2" />False</label
+                    >
+                  </li>
+                </ul>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+        <section>
+          <h2>CSS</h2>
+          <div class="formrow">
+            <div class="question-block">
+              <label for="customer-question"
+                >Are you a frontend developer?</label
+              >
+            </div>
+            <div class="answer">
+              <select id="customer-question" name="customer-question" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="question-block">
+              <label for="css-question">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea
+                name="css-question"
+                id="css-question"
+                cols="24"
+                rows="5"
+                placeholder="what is freecodecamp..."
+              ></textarea>
+            </div>
+          </div>
+        </section>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a> <br />
+        San Francisco<br />
+        California<br />
+        USA
+      </address>
+    </footer>
+  </body>
+</html>
